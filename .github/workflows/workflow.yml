@@ -1,0 +1,25 @@
+name: Simple workflow
+
+on: [push]
+
+jobs:
+  job:
+    strategy:
+      matrix:
+        os: [ ubuntu-18.04, ubuntu-20.04, ubuntu-22.04 ]
+        py: [ 3.7, 3.8, 3.9, "3.10" ]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.py }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.py }}
+    - name: Reproduce bug
+      run: |
+        export PIP_CONSTRAINT=constraints.txt
+        pip install pip
+        pip install setuptools
+        pip install tox
+        tox -epy

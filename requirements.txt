@@ -1,0 +1,12 @@
+black
+canaria-domestica-red
+coverage
+flake8
+isort
+mypy
+pip
+pip-tools
+pylint
+pytest
+setuptools
+tox
