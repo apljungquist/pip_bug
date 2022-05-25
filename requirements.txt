@@ -10,3 +10,4 @@ pylint
 pytest
 setuptools
 tox
+tox-constraints

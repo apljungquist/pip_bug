@@ -8,7 +8,7 @@ astroid==2.11.5
     # via pylint
 attrs==21.4.0
     # via pytest
-black==22.3.0
+black==21.12b0
     # via -r requirements.txt
 canaria-domestica-red==1.0.1
     # via -r requirements.txt
@@ -84,8 +84,10 @@ six==1.16.0
     #   tox
     #   virtualenv
 toml==0.10.2
-    # via tox
-tomli==2.0.1
+    # via
+    #   tox
+    #   tox-constraints
+tomli==1.2.3
     # via
     #   black
     #   mypy
@@ -93,6 +95,10 @@ tomli==2.0.1
     #   pylint
     #   pytest
 tox==3.25.0
+    # via
+    #   -r requirements.txt
+    #   tox-constraints
+tox-constraints==0.14.1
     # via -r requirements.txt
 typing-extensions==4.2.0
     # via
@@ -101,7 +107,9 @@ typing-extensions==4.2.0
     #   mypy
     #   pylint
 virtualenv==20.14.1
-    # via tox
+    # via
+    #   tox
+    #   tox-constraints
 wheel==0.37.1
     # via pip-tools
 wrapt==1.14.1
